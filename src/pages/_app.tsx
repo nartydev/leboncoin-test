@@ -1,12 +1,23 @@
-import type { AppProps } from 'next/app'
-import { getLoggedUserId } from '../utils/getLoggedUserId'
-import '../styles/globals.css'
+import type { AppProps } from "next/app";
+import { UserProvider } from "@/shared/store/user";
+import "@/shared/styles/globals.css";
+import StyledComponentsRegistry from "@/registry";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
-// Default way to get a logged user
-export const loggedUserId = getLoggedUserId()
+const queryClient = new QueryClient();
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <QueryClientProvider client={queryClient}>
+      <UserProvider>
+        <StyledComponentsRegistry>
+          <Component {...pageProps} />
+        </StyledComponentsRegistry>
+      </UserProvider>
+      <ReactQueryDevtools initialIsOpen={false} />
+    </QueryClientProvider>
+  );
 }
 
-export default MyApp
+export default MyApp;

@@ -1,7 +1,10 @@
 module.exports = {
+  experimental: {
+    forceSwcTransforms: true,
+  },
   i18n: {
-    locales: ['fr'],
-    defaultLocale: 'fr',
+    locales: ["fr"],
+    defaultLocale: "fr",
   },
   eslint: {
     ignoreDuringBuilds: true,
@@ -10,4 +13,4 @@ module.exports = {
     removeConsole: true,
     styledComponents: true,
   },
-}
+};
