@@ -47,6 +47,14 @@
       "senderNickname": "Thibaut",
       "lastMessageTimestamp": 1676141350620,
       "id": 6
+    },
+    {
+      "recipientId": 5,
+      "senderId": 1,
+      "recipientNickname": "Jean-Mi",
+      "senderNickname": "Thibaut",
+      "lastMessageTimestamp": 1676141790061,
+      "id": 7
     }
   ],
   "messages": [
@@ -84,6 +92,13 @@
       "authorId": 1,
       "timestamp": 1676141362079,
       "id": 5
+    },
+    {
+      "body": "aaa",
+      "conversationId": 3,
+      "authorId": 1,
+      "timestamp": 1676141813393,
+      "id": 6
     }
   ],
   "users": [

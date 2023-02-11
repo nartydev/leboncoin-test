@@ -34,7 +34,7 @@ export const ModalContact: FC<IProps> = ({isVisible, setVisible}) => {
               <button
                 key={user.id}
                 onClick={() => {
-                  mutate('/conversations', () =>
+                  mutate(`${userId}`, () =>
                     createConversation({
                       conversations: conversations.data,
                       users: contacts.data,
