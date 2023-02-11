@@ -49,6 +49,25 @@ For a better readibility, you can view it on [https://leboncoin.tech/frontend-te
 
 ---
 
+
+## Process
+
+Le test a été réalisé en 5h.
+
+- J'ai consulté le README, la documentation de l'API après ça j'ai choisi les packages que j'allais utilisé, j'ai essayé d'utiliser un minimum de package pour ne pas avoir des packages exagéré par rapport au besoin de l'application. Le CSS est donc custom et réalisé avec Styled component.
+
+- Après ça j'ai clean la base que j'avais pour l'adapter au mieux au nouveau design en évitant d'avoir du code inutile.
+
+- Je suis parti sur Dribbble pour trouver un design qui me plaisait puis j'ai intégré les composants dont j'avais besoin pour créé les différents vues.
+
+- Ensuite j'ai créé les services dont j'allais avoir besoin pour chaque fonctionnalité.
+
+- J'ai utilisé SWR, une librairie qui utilise des hooks pour fetch de la donnée, qui est une librairie légère (228kb). Elle permet de faire un handling d'erreur global et elle me paraissait adapté par rapport aux besoins de l'application.
+
+- Pour les tests j'ai voulu essayé de mock les calls axios mais j'ai eu quelques complications avec le fonctionnement de SWR donc j'ai switch sur MSW pour mock les calls de l'API. 
+
+- J'ai tenté le delete de conversation ainsi que la création d'une conversation mais pour le delete j'ai eu une erreur 404 donc j'ai supprimé la feature et pour le create conversation, l'insert fonctionne bien dans le db.json mais lors du GET des conversations, je n'ai reçu que les 3 conversations qui existait déjà, j'ai pas voulu pousser plus loin étant donné que le test était déjà conseillé pour 4h et que j'avais débordé d'1h
+
 ## Bonus 1 :
 
 We provide some conversation samples, but can you improve the app so the user can now create new conversations ?
