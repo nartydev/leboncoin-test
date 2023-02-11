@@ -22,8 +22,13 @@ export const InputMessageList: FC<IProps> = ({idConversation}) => {
       authorId: userId,
       timestamp: Date.now(),
     }
-    await mutate(`/messages/${idConversation}`, () => createMessage({conversationId: idConversation.toString(), message: newMessage}))
-    setValueInput('')
+    try {
+      await createMessage({conversationId: idConversation.toString(), message: newMessage})
+      await mutate(`/messages/${idConversation}`)
+      setValueInput('')
+    } catch (err) {
+      throw new Error(err)
+    }
   }
 
   return (

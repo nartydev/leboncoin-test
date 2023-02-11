@@ -29,13 +29,22 @@ export const MessageList = styled.section`
 
   .header {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     padding: 0 1rem;
     border-radius: 0.5rem;
     margin-bottom: 0.5rem;
     background-color: ${COLORS.lightBackground};
     border-bottom: 1px solid ${COLORS.lightBackground};
+
+    a {
+      display: none;
+      align-items: center;
+      padding-right: 0.4rem;
+      @media screen and (max-width: 600px) {
+        display: flex;
+      }
+    }
 
     & > button {
       background-color: transparent;

@@ -29,8 +29,24 @@
       "senderId": 1,
       "recipientNickname": "Jean-Mi",
       "senderNickname": "Thibaut",
-      "lastMessageTimestamp": 1676117689674,
+      "lastMessageTimestamp": 1676141243267,
       "id": 4
+    },
+    {
+      "recipientId": 5,
+      "senderId": 1,
+      "recipientNickname": "Jean-Mi",
+      "senderNickname": "Thibaut",
+      "lastMessageTimestamp": 1676141291184,
+      "id": 5
+    },
+    {
+      "recipientId": 5,
+      "senderId": 1,
+      "recipientNickname": "Jean-Mi",
+      "senderNickname": "Thibaut",
+      "lastMessageTimestamp": 1676141350620,
+      "id": 6
     }
   ],
   "messages": [
@@ -61,6 +77,13 @@
       "timestamp": 1620284667,
       "authorId": 2,
       "body": "Bonjour c'est le premier message de la seconde conversation"
+    },
+    {
+      "body": "abcde",
+      "conversationId": 3,
+      "authorId": 1,
+      "timestamp": 1676141362079,
+      "id": 5
     }
   ],
   "users": [

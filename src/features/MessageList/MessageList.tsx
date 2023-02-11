@@ -15,7 +15,7 @@ export const MessageList: FC = () => {
   const router = useRouter()
   const {id} = router.query
   const messagesEndRef = useRef(null)
-  const conversations = useSWR('/conversations', () => getAllConversations({userId: `${userId || 1}`}))
+  const conversations = useSWR(`${userId}`, userId => getAllConversations({userId: `${userId}`}))
   const conversation = conversations.data?.find(conv => conv.id === +id)
   const {data, isLoading} = useSWR(`/messages/${id}`, () => getAllMessages({conversationId: id.toString()}))
 

@@ -12,7 +12,7 @@ export const ConversationList: FC = () => {
   const router = useRouter()
   const {id} = router.query
   const [modalVisibleModal, setVisibleModal] = useState(false)
-  const {data, isLoading} = useSWR('/conversations', () => getAllConversations({userId: `${userId || getLoggedUserId()}`}))
+  const {data, isLoading} = useSWR(`${userId}`, userId => getAllConversations({userId: `${userId}`}))
   if (isLoading) return <div data-testid="loading">Chargement en cours..</div>
 
   return (

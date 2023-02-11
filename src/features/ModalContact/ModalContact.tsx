@@ -13,9 +13,9 @@ interface IProps {
 }
 
 export const ModalContact: FC<IProps> = ({isVisible, setVisible}) => {
-  const contacts = useSWR('/users', getAllUsers)
-  const conversations = useSWR('/conversations', getAllConversations)
   const userId = getLoggedUserId()
+  const contacts = useSWR('/users', getAllUsers)
+  const conversations = useSWR(`${userId}`, userId => getAllConversations({userId: `${userId}`}))
   if (contacts.isLoading) {
     return <div data-testid="loading">Chargement en cours...</div>
   }

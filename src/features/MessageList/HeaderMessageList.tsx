@@ -1,5 +1,7 @@
 import {Conversation} from '@/shared/types/conversation'
 import {getLoggedUserId} from '@/shared/utils/getLoggedUserId'
+import Link from 'next/link'
+import {ArrowLeft} from 'react-feather'
 
 export const HeaderMessageList = ({conversation}: {conversation: Conversation}) => {
   const userId = getLoggedUserId()
@@ -9,6 +11,9 @@ export const HeaderMessageList = ({conversation}: {conversation: Conversation}) 
   }
   return (
     <div className="header">
+      <Link href="/">
+        <ArrowLeft color="#fff" />
+      </Link>
       <h1 data-testid="contact-nickname">{getNickName(conversation)}</h1>
     </div>
   )
