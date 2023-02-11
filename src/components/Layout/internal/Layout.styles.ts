@@ -1,3 +1,4 @@
+import {COLORS} from '@/shared/constants/colors'
 import styled from 'styled-components'
 
 export const Container = styled.div`
@@ -7,6 +8,7 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: ${COLORS.background};
 
   footer {
     width: 100%;
@@ -24,9 +26,9 @@ export const Container = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
-    @media screen and (max-width: 600px){
-        min-width: 100%;
+    align-items: flex-start;
+    @media screen and (max-width: 600px) {
+      min-width: 100%;
     }
   }
 `

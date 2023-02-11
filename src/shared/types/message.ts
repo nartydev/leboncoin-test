@@ -5,3 +5,5 @@ export interface Message {
   timestamp: number
   body: string
 }
+
+export type MessageWithoutId = Pick<Message, Exclude<keyof Message, 'id'>>;
