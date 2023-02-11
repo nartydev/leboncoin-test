@@ -1,9 +1,8 @@
 import type {AppProps} from 'next/app'
-import {UserProvider} from '@/shared/store/user'
 import '@/shared/styles/globals.css'
 import StyledComponentsRegistry from '@/registry'
 import {SWRConfig} from 'swr'
-import toast from 'react-hot-toast'
+import toast, {Toaster} from 'react-hot-toast'
 
 function MyApp({Component, pageProps}: AppProps) {
   return (
@@ -11,15 +10,15 @@ function MyApp({Component, pageProps}: AppProps) {
       value={{
         onError: error => {
           if (error.status !== 403 && error.status !== 404) {
-            toast.error('Une erreur est survenu, veuillez réessayer')
+            toast.dismiss()
+            toast.error('Une erreur est survenu, veuillez réessayer', {duration: 3000})
           }
         },
       }}>
-      <UserProvider>
-        <StyledComponentsRegistry>
-          <Component {...pageProps} />
-        </StyledComponentsRegistry>
-      </UserProvider>
+      <StyledComponentsRegistry>
+        <Component {...pageProps} />
+      </StyledComponentsRegistry>
+      <Toaster />
     </SWRConfig>
   )
 }

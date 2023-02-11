@@ -1,7 +1,7 @@
 import {COLORS} from '@/shared/constants/colors'
 import styled from 'styled-components'
 
-const buttonStyle = `
+export const buttonStyle = `
     display: flex;
     align-items: center;
     justify-content: center;
@@ -9,6 +9,8 @@ const buttonStyle = `
     border-radius: 5px;
     transition: background 0.3s ease-in-out;
     cursor: pointer;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+    sans-serif;
     &:hover {
         background: ${COLORS.gray};
     }
@@ -22,6 +24,7 @@ export const MessageList = styled.section`
   flex-direction: column;
   @media screen and (max-width: 600px) {
     flex: 1;
+    margin-left: 0rem;
   }
 
   .header {

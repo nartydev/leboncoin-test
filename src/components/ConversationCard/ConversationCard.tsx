@@ -2,6 +2,7 @@ import {Conversation} from '@/shared/types/conversation'
 import {getLoggedUserId} from '@/shared/utils/getLoggedUserId'
 import {FC} from 'react'
 import {Avatar} from '../Avatar'
+import {UserCard} from '../UserCard'
 import * as Styled from './internal/ConversationCard.styles'
 
 interface IProps {
@@ -15,13 +16,7 @@ export const ConversationCard: FC<IProps> = ({conversation, isSelected}) => {
   const nickname = userId !== conversation.senderId ? conversation.senderNickname : conversation.recipientNickname
   return (
     <Styled.ConversationCard href={`/conversation/${conversation.id}`} title={nickname}>
-      <Styled.Card isSelected={isSelected}>
-        <Avatar nickname={nickname} />
-        <div>
-          <h3>{nickname}</h3>
-          <p>{date}</p>
-        </div>
-      </Styled.Card>
+      <UserCard isSelected={isSelected} nickname={nickname} date={date} />
     </Styled.ConversationCard>
   )
 }
